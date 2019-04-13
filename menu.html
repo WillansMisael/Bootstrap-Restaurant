@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title></title>
+	<!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<!-- fontawesome par iconos -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+		 integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	<!-- bootstrap-social para iconos botones de bootstrap-social -->
+		<link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
+</head>
+<body>
+	<div id="flot" class="justify-content-center bg-primary"><span id="flot-img" class="fa fa-pencil-alt fa-lg"></span></div>
+	<div class="container-fluid bg-light">
+		<nav class="navbar navbar-expand-md navbar-light bg-light">
+			<!-- Branding -->
+			<a class="navbar-brand" href="#">
+				<img src="img/logoRestSmall.png" alt="logo">
+				Restaurant &amp; Café
+			</a>
+			<!-- Fin del Branding -->
+			<!-- Creo el botón de toggle -->
+			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#mimenu">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<!-- Fin de crear el botón de toggle -->
+			<!-- Creación del menú -->
+			<div id="mimenu" class="collapse navbar-collapse justify-content-between">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="index.html">
+							<span class="fa fa-home fa-lg"></span>
+							Inicio</a>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" href="#">
+						 	<span class="fa fa-align-justify fa-lg"></span>
+							Menu</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="nosotros.html">
+					  	<span class="fa fa-users fa-lg"></span>
+							Nosotros</a>
+					</li>
+					<li class="nav-item">
+						<a href="contacto.html" class="nav-link">
+								<span class="far fa-comment-alt"></span>
+							Contáctanos</a>
+						<!-- bg-faded, bg-primary, bg-success, bg-info, bg-warning, bg-danger, bg-inverse -->
+					</li>
+					<li class="nav-item">
+						<a class="nav-link disabled" href="#">
+							<span class="fas fa-shopping-cart"></span>
+							Tienda Online</a>
+					</li>
+				</ul>
+				<!-- boton para abrir un modal -->
+				<button class="btn btn-primary" type="button" data-toggle="modal" data-target="#modalReservar">Reservar</button>
+				<!-- fin del boton modal -->
+			</div>
+			<!-- Fin de la creación del menú -->
+		</nav>
+	</div>
+
+	<!-- Aqui comienza el jumbotron -->
+	<div class="jumbotron jumbotron-fluid">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-12 col-sm-6 col-md-8 ">
+					<h1>
+						Restaurante &amp; Café
+					</h1>
+					<p class="lead">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua.
+					</p>
+					<hr>
+					<p>¡Tenemos sucursales en toda Bolivia!</p>
+				</div>
+				<div class="col-12 col-sm-6 col-md-4 logo">
+					<img src="img/logoRest.png" alt="Logo" class="mw-100">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Aqui termina el jumbotron -->
+
+	<!-- modal para reservar al hacer click en el boton -->
+
+	<div id="modalReservar" class="modal fade">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header bg-light">
+					<h5>Reservar</h5>
+					<!-- para crar un boton que cierre el modal -->
+					<button type="button" class="close" data-dismiss="modal">
+						<span>&times;</span>
+					</button>
+					<!-- fin del boton -->
+				</div>
+				<div class="modal-body">
+					<div class="container-fluid">
+						<!--para agrupar un form en una fila  -->
+						<div class="row form-group">
+							<label class="col-sm-4">
+								Cantidad de Personas:
+							</label>
+							<div class="col-sm-8">
+								<div class="form-check form-check-inline">
+									<label>
+										<input type="radio" name="personasnum" value="uno">1
+									</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<label>
+										<input type="radio" name="personasnum" value="dos">2
+									</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<label>
+										<input type="radio" name="personasnum" value="tres">3
+									</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<label>
+										<input type="radio" name="personasnum" value="cuatro">4
+									</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<label>
+										<input type="radio" name="personasnum" value="cinco">5
+									</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<label>
+										<input type="radio" name="personasnum" value="seis">6
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class="row form-group">
+							<label class="col-sm-4">Fecha:</label>
+							<div class="col-sm-8">
+								<input type="date" id="fecha" class="form-control">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12">
+								<div class="alert alert-warning">
+									<strong>Atencion!</strong>
+									Para reservas de mas de 6 personas llame a nuestras oficinas.
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="modal-footer bg-light">
+
+						<button type="button" class="btn btn-success" onclick="reservar()">Reservar</button>
+						<button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- fin del modal para reservar -->
+  <!-- Container del menu de la semana -->
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-12">
+          <h3>Nuestros Deliciosos Almuerzos:</h3>
+          <!-- 3 tipos de nav:
+            1. navbar
+            2. nav-tab, nav-pill
+            3. acordeon-->
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a href="#lunes" class="nav-link active" data-toggle="tab" role="tab">Lunes</a>
+            </li>
+            <li class="nav-item">
+              <a href="#martes" class="nav-link" data-toggle="tab" role="tab">Martes</a>
+            </li>
+            <li class="nav-item">
+              <a href="#miercoles" class="nav-link" data-toggle="tab" role="tab">Miercoles</a>
+            </li>
+            <li class="nav-item">
+              <a href="#jueves" class="nav-link" data-toggle="tab" role="tab">Jueves</a>
+            </li>
+            <li class="nav-item">
+              <a href="#viernes" class="nav-link" data-toggle="tab" role="tab">Viernes</a>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane fade show active" role="tabpanel" id="lunes">
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <th>
+                        Entrada
+                      </th>
+                      <td>
+                        Atun
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        Sopa
+                      </th>
+                      <td>
+                        Cazuela
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        Segundo
+                      </th>
+                      <td>
+                        Pique
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        Postre
+                      </th>
+                      <td>
+                        Helado
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="tab-pane fade" role="tabpanel" id="martes">
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <th>
+                        Entrada
+                      </th>
+                      <td>
+                        Papa Rellena
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        Sopa
+                      </th>
+                      <td>
+                        Cabellos de Angel
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        Segundo
+                      </th>
+                      <td>
+                        Chuleta
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        Postre
+                      </th>
+                      <td>
+                        Helado
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="tab-pane fade" role="tabpanel" id="miercoles">
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <th>
+                        Entrada
+                      </th>
+                      <td>
+                        Ensalada
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        Sopa
+                      </th>
+                      <td>
+                        Mani
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        Segundo
+                      </th>
+                      <td>
+                        Lomito
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        Postre
+                      </th>
+                      <td>
+                        Gelatina
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="tab-pane fade" role="tabpanel" id="jueves">
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <th>
+                        Entrada
+                      </th>
+                      <td>
+                        Roscones
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        Sopa
+                      </th>
+                      <td>
+                        Arroz
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        Segundo
+                      </th>
+                      <td>
+                        Milanesa de Pollo
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        Postre
+                      </th>
+                      <td>
+                        Helado
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="tab-pane fade" role="tabpanel" id="viernes">
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <th>
+                        Entrada
+                      </th>
+                      <td>
+                        Empanadas
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        Sopa
+                      </th>
+                      <td>
+                        Puchero
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        Segundo
+                      </th>
+                      <td>
+                        Salpicon
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        Postre
+                      </th>
+                      <td>
+                        Helado
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!--  container de platos fuertes acordeon-->
+   <div class="container">
+     <div class="row">
+       <div class="col-12 col-md-10 offset-md-1">
+         <h3 class="text-center">Las Especialidades de la Casa:</h3>
+         <div id="fuertes">
+           <div class="card">
+             <div class="card-header bg-primary text-white" role="tab" id="mondongo_head">
+               <h3>
+                  <a data-toggle="collapse" data-target="#mondongo" class="puntero">
+                    Mondongo
+                    <small>
+                      Delicia Chuquisaqueña
+                    </small>
+                  </a>
+               </h3>
+             </div>
+             <div class="collapse show" id="mondongo" data-parent="#fuertes">
+               <div class="card-body">
+                 <div class="row">
+                   <div class="col-12 col-md-4">
+                     <img src="img/mondongo.jpg" alt="" class="w-100">
+                   </div>
+                   <div class="col-12 col-md-8">
+                     <p> Mondongo Lorem ipsum dolor sit amet, consectetur
+                       adipisicing elit. Sunt perspiciatis necessitatibus rerum
+                       molestias reprehenderit non, ab magni? Ducimus suscipit
+                       architecto, sequi eaque sapiente quo natus eum, doloribus
+                       sint odio mollitia?
+                     </p>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+           <div class="card">
+             <div class="card-header bg-info text-white" role="tab" id="majadito_head">
+               <h3>
+                  <a data-toggle="collapse" data-target="#majadito" class="collapsed puntero">
+                    Majadito
+                    <small>
+                      Manjar Cruceño
+                    </small>
+                  </a>
+               </h3>
+             </div>
+             <div class="collapse" id="majadito" data-parent="#fuertes">
+               <div class="card-body">
+                 <div class="row">
+                   <div class="col-12 col-md-4">
+                     <img src="img/majadito.jpg" alt="" class="w-100">
+                   </div>
+                   <div class="col-12 col-md-8">
+                     <p> Majadito Lorem ipsum dolor sit amet, consectetur
+                       adipisicing elit. Sunt perspiciatis necessitatibus rerum
+                       molestias reprehenderit non, ab magni? Ducimus suscipit
+                       architecto, sequi eaque sapiente quo natus eum, doloribus
+                       sint odio mollitia?
+                     </p>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+           <div class="card">
+             <div class="card-header bg-primary text-white" role="tab" id="pique_head">
+               <h3>
+                  <a data-toggle="collapse" data-target="#pique" class="collapsed puntero">
+                    Pique
+                    <small>
+                      Tradicion Cochabambina
+                    </small>
+                  </a>
+               </h3>
+             </div>
+             <div class="collapse" id="pique" data-parent="#fuertes">
+               <div class="card-body">
+                 <div class="row">
+                   <div class="col-12 col-md-4">
+                     <img src="img/pique.jpg" alt="" class="w-100">
+                   </div>
+                   <div class="col-12 col-md-8">
+                     <p> Pique Lorem ipsum dolor sit amet, consectetur
+                       adipisicing elit. Sunt perspiciatis necessitatibus rerum
+                       molestias reprehenderit non, ab magni? Ducimus suscipit
+                       architecto, sequi eaque sapiente quo natus eum, doloribus
+                       sint odio mollitia?.
+                     </p>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+  <!-- Footer -->
+	<footer class="bg-light">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-sm-4">
+					<h3>Links:</h3>
+					<!-- clase para dejar sin estilos a la lista -->
+					<ul class="list-unstyled">
+						<li>
+							<a href="index.html">Inicio</a>
+						</li>
+						<li>
+							<a href="nosotros.html">Nosotros</a>
+						</li>
+						<li>
+							<a href="contacto.html">Contacto</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-12 col-sm-4">
+					<h3>Sede Central:</h3>
+					<p class="m-0">Calle Bolivar 111</p>
+					<p class="m-0">Zona Central</p>
+					<p class="m-0">Sucre-Bolivia</p>
+				</div>
+				<div class="col-12 col-sm-4">
+					<h3>Visitanos en:</h3>
+					<a href="" class="btn btn-social-icon btn-facebook">
+						<i class="fab fa-facebook-f"></i>
+					</a>
+					<a href="" class="btn btn-social-icon btn-twitter">
+						<i class="fab fa-twitter"></i>
+					</a>
+					<a href="" class="btn btn-social-icon btn-google">
+						<i class="fab fa-google-plus-g"></i>
+					</a>
+				</div>
+				<div class="col-12 col-sm-12">
+					<h6 class="empresa">WMRC - Copyright 2018</h6>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- fin del Footer -->
+
+
+	<script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
